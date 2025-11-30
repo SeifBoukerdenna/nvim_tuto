@@ -10,6 +10,13 @@ class TaskHandler:
             with open(NAME_OF_FILE, "w") as f:
                 json.dump([], f)
 
+    def list_task(self):
+        with open(NAME_OF_FILE, "r") as f:
+            data = json.load(f)
+
+        for idx, item in enumerate(data):
+            print(f"{idx + 1}. {item['task']} [{item['status']}]")
+
     def add_task(self, task):
         with open(NAME_OF_FILE, "r") as f:
             data = json.load(f)
@@ -19,10 +26,3 @@ class TaskHandler:
         with open(NAME_OF_FILE, "w") as f:
             json.dump(data, f, indent=4)
         print(f"Added: {task}")
-
-    def list_task(self):
-        with open(NAME_OF_FILE, "r") as f:
-            data = json.load(f)
-
-        for idx, item in enumerate(data):
-            print(f"{idx + 1}. {item['task']} [{item['status']}]")

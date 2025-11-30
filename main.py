@@ -1,5 +1,5 @@
 import sys
-from handler import TaskHandler
+from utils.utils import TaskHandler
 
 
 def main():
@@ -17,6 +17,10 @@ def main():
 
     elif command == "list":
         handler.list_task()
+
+    elif command == "help":
+        print("Helper method called")
+        return
 
 
 if __name__ == "__main__":
