@@ -37,6 +37,18 @@ class TaskManager:
         with open(FILE_JSON, "w") as f:
             json.dump(data, f, indent=4)
 
+    def delete_task(self, index):
+        data = self._load_data()
+        # check if index is valid
+        if 0 <= index < len(data):
+            item = data.pop(index)
+            print(f"Deleted task: {item['task']}")
+        else:
+            print("Invalid task number")
+
+        with open(FILE_JSON, "w") as f:
+            json.dump(data, f, indent=4)
+
     def _load_data(self):
         with open(FILE_JSON, "r") as f:
             return json.load(f)

@@ -26,6 +26,10 @@ def main():
         index = int(sys.argv[2]) - 1
         handler.complete_task(index)
 
+    elif command == "delete":
+        index = int(sys.argv[2]) - 1
+        handler.delete_task(index)
+
 
 if __name__ == "__main__":
     main()
