@@ -1,6 +1,10 @@
-    [
-      {
+[
+    {
         "task": "learn LazyVim",
+        "status": "done"
+    },
+    {
+        "task": "master tmux",
         "status": "pending"
-      }
-    ]
+    }
+]

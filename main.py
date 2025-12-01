@@ -1,13 +1,13 @@
 import sys
-from utils.utils import TaskHandler
+from utils.utils import TaskManager
 
 
+# TODO: Need better init
 def main():
-    handler = TaskHandler()
+    handler = TaskManager()
 
     if len(sys.argv) < 2:
         print("Usage:python main.py [add|list] [task_name]")
-        return
 
     command = sys.argv[1]
 
@@ -21,6 +21,10 @@ def main():
     elif command == "help":
         print("Helper method called")
         return
+
+    elif command == "complete":
+        index = int(sys.argv[2]) - 1
+        handler.complete_task(index)
 
 
 if __name__ == "__main__":
